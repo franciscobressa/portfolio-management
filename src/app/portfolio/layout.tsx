@@ -1,7 +1,10 @@
-export default function DashboardLayout({
-  children, // will be a page or nested layout
-}: {
-  children: React.ReactNode;
-}) {
-  return <div style={{ backgroundColor: "blue" }}>{children}</div>;
+import { Box } from "@mui/material";
+import { ReactNode } from "react";
+
+interface DashboardLayoutProps {
+  children: ReactNode;
+}
+
+export default function DashboardLayout({ children }: DashboardLayoutProps) {
+  return <Box>{children}</Box>;
 }
