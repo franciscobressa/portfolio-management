@@ -1,13 +1,13 @@
-import { Box } from "@mui/material";
+import { Stack } from "@mui/material";
 import Main from "./components/sections/Main";
 import Projects from "./components/sections/Projects";
 
 export default function Portfolio() {
   return (
-    <Box>
+    <Stack>
       <Main />
       <Projects />
       <Main />
-    </Box>
+    </Stack>
   );
 }

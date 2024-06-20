@@ -1,4 +1,4 @@
-import { Box, BoxProps, SxProps } from "@mui/material";
+import { Box, BoxProps, Stack, SxProps } from "@mui/material";
 import { ReactNode } from "react";
 
 interface SectionProps extends BoxProps {
@@ -8,8 +8,8 @@ interface SectionProps extends BoxProps {
 
 export default function Section({ children, sx, ...rest }: SectionProps) {
   return (
-    <Box height={"90vh"} sx={sx} {...rest}>
-      {children}
+    <Box height={"85vh"} p={"1%"} sx={sx} {...rest}>
+      <Stack gap={"2vh"}>{children}</Stack>
     </Box>
   );
 }

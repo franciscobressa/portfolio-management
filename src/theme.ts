@@ -4,10 +4,14 @@ import { createTheme } from "@mui/material/styles";
 
 declare module "@mui/material/styles" {
   interface Palette {
-    mainColor: string;
+    firstColor: string;
+    secondColor: string;
+    thirdColor: string;
   }
   interface PaletteOptions {
-    mainColor: string;
+    firstColor: string;
+    secondColor: string;
+    thirdColor: string;
   }
 }
 
@@ -25,15 +29,25 @@ const theme = createTheme({
 
 const lighTheme = createTheme(theme, {
   palette: {
-    mode: "light",
-    mainColor: "#4831d4",
+    mode: "dark",
+    firstColor: {
+      main: "#4831d4",
+      contrastText: "#ffffff",
+    },
+    secondColor: { main: "#ccf381" },
+    thirdColor: { main: "#76d9d7" },
   },
 });
 
 const darkTheme = createTheme(theme, {
   palette: {
     mode: "dark",
-    mainColor: "#4831d4",
+    firstColor: {
+      main: "#4831d4",
+      contrastText: "#ffffff",
+    },
+    secondColor: { main: "#ccf381" },
+    thirdColor: { main: "#76d9d7" },
   },
 });
 

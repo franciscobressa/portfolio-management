@@ -3,7 +3,6 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material";
 import { darkTheme, lighTheme } from "../theme";
 import "../globals.css";
-import { useState } from "react";
 
 export const metadata: Metadata = {
   title: "Francisco Bressa's Portfolio",
