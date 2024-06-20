@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material";
-import theme from "../theme";
+import { darkTheme, lighTheme } from "../theme";
 import "../globals.css";
+import { useState } from "react";
 
 export const metadata: Metadata = {
   title: "Francisco Bressa's Portfolio",
@@ -14,11 +15,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const darkMode = true;
+
   return (
     <html lang="en">
       <body>
         <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          <ThemeProvider theme={darkMode ? darkTheme : lighTheme}>
+            {children}
+          </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
