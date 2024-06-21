@@ -1,36 +1,55 @@
-import { Box } from "@mui/material";
 import Link from "next/link";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import MailIcon from "@mui/icons-material/Mail";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import { Box } from "@mui/material";
+import { LinkedIn, GitHub, Mail, WhatsApp } from "@mui/icons-material";
+import { ReactNode } from "react";
+
+const socialMediaItens = [
+  {
+    name: "Github",
+    link: "https://www.github.com/franciscobressa",
+    icon: <GitHub fontSize="inherit" />,
+  },
+  {
+    name: "Linkedin",
+    link: "https://www.linkedin.com/in/franciscobressa",
+    icon: <LinkedIn fontSize="inherit" />,
+  },
+  {
+    name: "Whatsapp",
+    link: "https://wa.me/+5567998661758",
+    icon: <WhatsApp fontSize="inherit" />,
+  },
+  {
+    name: "Email",
+    link: "mailto:bressafrancisco@gmail.com",
+    icon: <Mail fontSize="inherit" />,
+  },
+];
+
+function SocialMediaListItem({
+  link,
+  icon,
+}: {
+  link: string;
+  icon: ReactNode;
+}) {
+  return (
+    <Link target="_blank" href={link}>
+      <Box fontSize={"4vh"} color={"#ffffff"}>
+        {icon}
+      </Box>
+    </Link>
+  );
+}
 
 export default function SocialMediaList() {
   return (
     <Box display={"flex"} justifyContent={"end"} gap={"2vh"}>
-      <Link target="_blank" href={"https://www.github.com/franciscobressa"}>
-        <Box fontSize={"4vh"} color={"secondColor.main"}>
-          <GitHubIcon fontSize="inherit" />
-        </Box>
-      </Link>
-      <Link
-        target="_blank"
-        href={"https://www.linkedin.com/in/franciscobressa"}
-      >
-        <Box fontSize={"4vh"} color={"secondColor.main"}>
-          <LinkedInIcon fontSize="inherit" />
-        </Box>
-      </Link>
-      <Link target="_blank" href={"https://wa.me/+5567998661758"}>
-        <Box fontSize={"4vh"} color={"secondColor.main"}>
-          <WhatsAppIcon fontSize="inherit" />
-        </Box>
-      </Link>
-      <Link target="_blank" href={"mailto:bressafrancisco@gmail.com"}>
-        <Box fontSize={"4vh"} color={"secondColor.main"}>
-          <MailIcon fontSize="inherit" />
-        </Box>
-      </Link>
+      {socialMediaItens.map((item, index) => {
+        return (
+          <SocialMediaListItem key={index} link={item.link} icon={item.icon} />
+        );
+      })}
     </Box>
   );
 }

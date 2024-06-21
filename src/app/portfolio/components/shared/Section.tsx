@@ -8,7 +8,7 @@ interface SectionProps extends BoxProps {
 
 export default function Section({ children, sx, ...rest }: SectionProps) {
   return (
-    <Box height={"85vh"} p={"1%"} sx={sx} {...rest}>
+    <Box height={"85vh"} sx={sx} {...rest}>
       <Stack gap={"2vh"}>{children}</Stack>
     </Box>
   );
