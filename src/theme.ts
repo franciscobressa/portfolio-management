@@ -20,7 +20,6 @@ declare module "@mui/material/styles" {
 const roboto = Roboto({
   weight: ["300", "400", "500", "700", "900"],
   subsets: ["latin"],
-  display: "swap",
 });
 
 const theme = createTheme({

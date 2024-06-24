@@ -10,7 +10,8 @@ export default function Section({ children, sx, ...rest }: SectionProps) {
   return (
     <Box
       height={"85vh"}
-      sx={{ padding: { xs: "5%", md: "1%" }, ...sx }}
+      position={"relative"}
+      sx={{ padding: { xs: "2% 5%", md: "1%" }, ...sx }}
       {...rest}
     >
       <Stack gap={"2vh"}>{children}</Stack>
